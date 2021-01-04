@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-2">
+            <a class="navbar-brand" href="#"><i class="fa fa-home"></i></a>
+            
+            <!-- Links -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-bell" aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-plus"></i></a>
+                </li>
+            </ul>
+        </nav>
+          
+        <div class="row">
+            <div class="col-sm-3">
+                <ul id="projects-view" class="list-group">
+                    <li class="list-group-item">Default</li>
+                    <li class="list-group-item">Software Development</li>
+                    <li class="list-group-item">Fitness</li>
+                    <li class="list-group-item">Recreation</li>
+                </ul>
+            </div>
+            <div class="col-sm-9">
+                <div id="add-project" class="p-3 border">
+                   <form action="" name="">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" required class="form-control">
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea name="description" id="description" class="form-control" rows="3"></textarea>
+                        </div>
+
+                       <button class="btn btn-primary">Create Project</button>
+                   </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

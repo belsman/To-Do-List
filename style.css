@@ -1,0 +1,8 @@
+textarea {
+  resize: none;
+}
+
+ul#projects-view li:hover {
+  background-color: #111;
+  color: #f9f9f9;
+}

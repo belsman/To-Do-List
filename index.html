@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-2">
+            <a class="navbar-brand" href="#"><i class="fa fa-home"></i></a>
+            
+            <!-- Links -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-bell" aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-plus"></i></a>
+                </li>
+            </ul>
+        </nav>
+          
+        <div class="row">
+            <div class="col-sm-3">
+                <ul id="projects-view" class="list-group">
+                    <li class="list-group-item">Default <span class="badge badge-pill badge-secondary">5</span></li>
+                    <li class="list-group-item">Software Development <span class="badge badge-pill badge-secondary">12</span></li>
+                    <li class="list-group-item">Fitness <span class="badge badge-pill badge-secondary">7</span></li>
+                    <li class="list-group-item">Recreation <span class="badge badge-pill badge-secondary">5</span></li>
+                </ul>
+            </div>
+            <div class="col-sm-9">
+                <div id="todo-list-view">
+                    <div class="task d-flex p-2 mb-1 border">
+                        <input type="checkbox" name="complete-task" id="" class="align-self-center">
+                        <div class="title ml-3">
+                            <h5>Complete the HTML pages of the TODO APP</h5>
+                            <span class="due-date font-italic">Today</span><br>
+                            <span class="priority font-italic text-danger">Critical</span>
+                        </div>
+                        <span class="delete-task text-danger ml-auto align-self-end"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                    </div>
+
+                    <div class="task d-flex p-2 mb-1 border">
+                        <input type="checkbox" name="complete-task" id="" class="align-self-center">
+                        <div class="title ml-3">
+                            <h5>Implement the CSS</h5>
+                            <span class="due-date font-italic">July 18 8:00pm</span><br>
+                            <span class="priority font-italic text-warning">Urgent</span>
+                        </div>
+                        <span class="delete-task text-danger ml-auto align-self-end"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                    </div>
+
+                    <div class="task d-flex p-2 mb-1 border">
+                        <input type="checkbox" name="complete-task" id="" class="align-self-center">
+                        <div class="title ml-3">
+                            <h5>The functionality with Javascript</h5>
+                            <span class="due-date font-italic">July 28 8:00pm</span><br>
+                            <span class="priority font-italic text-info">Normal</span>
+                        </div>
+                        <span class="delete-task text-danger ml-auto align-self-end"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

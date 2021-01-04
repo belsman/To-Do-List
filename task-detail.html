@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-2">
+            <a class="navbar-brand" href="#"><i class="fa fa-home"></i></a>
+            
+            <!-- Links -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-bell" aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-plus"></i></a>
+                </li>
+            </ul>
+        </nav>
+          
+        <div class="row">
+            <div class="col-sm-3">
+                <ul id="projects-view" class="list-group">
+                    <li class="list-group-item">Default</li>
+                    <li class="list-group-item">Software Development</li>
+                    <li class="list-group-item">Fitness</li>
+                    <li class="list-group-item">Recreation</li>
+                </ul>
+            </div>
+            <div class="col-sm-9">
+                <div id="task-detail-view" class="p-2 border">
+                    <h3>Complete the HTML pages of the TODO APP <i class="fa fa-caret-right"></i> Default</h3>
+                    <div class="description my-2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni vel consequuntur officia. Architecto 
+                        libero, quia vel amet, illum quasi soluta impedit nostrum doloribus ab praesentium odit consectetur 
+                        temporibus modi in!
+                    </div>
+
+                    <div class="my-2">
+                        <label for="priority" class="font-italic priority">Project: </label>
+                        <select name="" id="priority" class="form-control">
+                            <option value="Default">Default</option>
+                            <option value="Software Development">Software Development</option>
+                            <option value="Fitness">Fitness</option>
+                            <option value="Fitness">Recreation</option>
+                        </select>
+                    </div>
+
+                    <div class="my-2">
+                        <label for="priority" class="font-italic priority">Priority: </label>
+                        <select name="" id="priority" class="form-control">
+                            <option value="0">Normal</option>
+                            <option value="1">Urgent</option>
+                            <option value="2" selected>Critical</option>
+                        </select>
+                    </div>
+                    <div class="my-2">
+                        <label for="due-date">Done?</label>
+                        <input type="datetime" name="due-date" id="due-date" value="18-12-1992" class="form-control">
+                    </div>
+                    <div class="my-2 d-flex justify-content-between">
+                        <div>
+                            <label for="completed">Done?</label>
+                            <input type="checkbox" name="" id="completed">
+                        </div>
+                        <span class="delete-task text-danger"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
