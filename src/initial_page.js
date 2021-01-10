@@ -1,10 +1,36 @@
+import todoModel from './models/todo';
+import projectModel from './models/project';
 import navbar from './views/nav';
-import leftCol from './views/left-col';
-import rightCol from './views/right-col';
+import leftColView from './views/left-col';
+import rightColView from './views/right-col';
+import projectCard from './views/project-card';
+import todoCard from './views/todo-card';
+
 
 export default () => {
     const root = document.getElementById('content');
-    root.insertAdjacentHTML( 'beforeend', navbar());
-    root.insertAdjacentHTML('beforeend', leftCol('data'));
-    root.insertAdjacentHTML('beforeend', rightCol('data'));
+    // create skeleton
+    root.insertAdjacentHTML('beforeend', navbar());
+    const rowContainer = document.createElement('div');
+    rowContainer.classList.add('row');
+
+    rowContainer.insertAdjacentHTML('beforeend', leftColView());
+    rowContainer.insertAdjacentHTML('beforeend', rightColView());
+    root.appendChild(rowContainer);
+    
+    // fetch models
+    const projects = projectModel.fetchProjects();
+    const todos = todoModel.fetchTodos();
+
+    // display index views
+    const projectListElement = document.getElementById('projects-view');
+    const todoListElement = document.getElementById('todo-list-view');
+
+    projects.forEach((project) => {
+        projectListElement.insertAdjacentHTML('beforeend', projectCard(project)) ;
+    });
+
+    todos.forEach((todo) => {
+        todoListElement.insertAdjacentHTML('beforeend', todoCard(todo));
+    });
 };

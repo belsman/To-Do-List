@@ -4,8 +4,8 @@ export default {
         return this.todoLists;
     },
     addTodo(obj) {
-      this.todoLists.push(obj);
-      localStorage.setItem('todoStorage', JSON.stringify(this.todoLists));
-      return this;
+        this.todoLists.push(obj);
+        localStorage.setItem('todoStorage', JSON.stringify(this.todoLists));
+        return this;
     }
 }
