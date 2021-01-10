@@ -1,12 +1,10 @@
-import model from './models/todo';
+import todoModel from './models/todo';
+import projectModel from './models/project';
 
-const todo = {
-    title: 'Implement the CSS',
-    description: 'The implement the css of the CSS DESCRIPTION',
-    dueDate: '07-12-2019',
-    priority: 3,
-    completed: true,
-    projects: 'project B'
+const project = {
+    projects: 'project B',
+    description: 'this is project B',
 }
-console.log(model.addTodo(todo));
-console.log(model.fetchTodos());
+
+projectModel.addProject(project);
+console.log(projectModel.fetchProjects());
