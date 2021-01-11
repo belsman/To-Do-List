@@ -1,1 +1,1 @@
-export default (data) => `<li class="list-group-item">${data.projects}</li>`;
+export default (project) => `<li class="list-group-item">${project.name}</li>`;

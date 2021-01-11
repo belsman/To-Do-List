@@ -8,6 +8,11 @@ textarea {
 }
   
 ul#projects-view li:hover {
-  background-color: #111;
+  background-color: #333;
   color: #f9f9f9;
+}
+
+.task,
+.list-group-item {
+  cursor: pointer;
 }
