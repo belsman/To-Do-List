@@ -56,7 +56,7 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
   \********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _initial_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./initial_page */ \"./src/initial_page.js\");\n/* harmony import */ var _models_project__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./models/project */ \"./src/models/project.js\");\n/* harmony import */ var _models_todo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./models/todo */ \"./src/models/todo.js\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\r\n\r\n\r\n\r\n\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {\r\n    (0,_initial_page__WEBPACK_IMPORTED_MODULE_0__.default)();\r\n\r\n    const deleteButtons = document.querySelectorAll('.delete-task');\r\n    for (let btn of deleteButtons) {\r\n        btn.addEventListener('click', (e) => {\r\n            \r\n        });\r\n    }\r\n});\r\n\n\n//# sourceURL=webpack://todo-js-app/./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _initial_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./initial_page */ \"./src/initial_page.js\");\n/* harmony import */ var _models_project__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./models/project */ \"./src/models/project.js\");\n/* harmony import */ var _models_todo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./models/todo */ \"./src/models/todo.js\");\n/* harmony import */ var _views_create_project_view__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./views/create-project-view */ \"./src/views/create-project-view.js\");\n/* harmony import */ var _views_project_card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/project-card */ \"./src/views/project-card.js\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {\r\n    (0,_initial_page__WEBPACK_IMPORTED_MODULE_0__.default)();\r\n\r\n    // Create Project\r\n    const createBtn = document.querySelector('button#create-btn');\r\n    createBtn.addEventListener('click', (e) => {\r\n        const rightCol = document.querySelector('div.col-sm-9');\r\n        rightCol.innerHTML = '';\r\n        rightCol.innerHTML = (0,_views_create_project_view__WEBPACK_IMPORTED_MODULE_3__.default)();\r\n\r\n        const { createProjectForm } = document;\r\n        createProjectForm.addEventListener('submit', (e) => {\r\n            e.preventDefault();\r\n\r\n            const [name, description] = e.target.elements;\r\n            const project = {name: name.value, description: description.value, createdAt: Date.now()};\r\n\r\n            _models_project__WEBPACK_IMPORTED_MODULE_1__.default.addProject(project);\r\n            const projectView = document.querySelector('ul#projects-view');\r\n            projectView.insertAdjacentHTML('beforeend', (0,_views_project_card__WEBPACK_IMPORTED_MODULE_4__.default)(project));\r\n            createProjectForm.reset();\r\n        });\r\n    });\r\n\r\n    const deleteButtons = document.querySelectorAll('.delete-task');\r\n    for (let btn of deleteButtons) {\r\n        btn.addEventListener('click', (e) => {\r\n            \r\n        });\r\n    }\r\n});\r\n\n\n//# sourceURL=webpack://todo-js-app/./src/app.js?");
 
 /***/ }),
 
@@ -86,7 +86,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\r\n    projectLists: JSON.parse(localStorage.getItem('projectStorage')) || [],\r\n    fetchProjects() {\r\n        return this.projectLists;\r\n    },\r\n    createProject(obj) {\r\n        this.projectLists.push(obj);\r\n        localStorage.setItem('projectStorage', JSON.stringify(this.projectLists));\r\n        return this;\r\n    }\r\n});\r\n\n\n//# sourceURL=webpack://todo-js-app/./src/models/project.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\r\n    projectLists: JSON.parse(localStorage.getItem('projectStorage')) || [],\r\n    fetchProjects() {\r\n        return this.projectLists;\r\n    },\r\n    addProject(obj) {\r\n        this.projectLists.push(obj);\r\n        localStorage.setItem('projectStorage', JSON.stringify(this.projectLists));\r\n        return this;\r\n    }\r\n});\r\n\n\n//# sourceURL=webpack://todo-js-app/./src/models/project.js?");
 
 /***/ }),
 
@@ -100,13 +100,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/views/create-project-view.js":
+/*!******************************************!*\
+  !*** ./src/views/create-project-view.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => `\r\n<div id=\"add-project\" class=\"p-3 border\">\r\n    <form action=\"\" name=\"createProjectForm\">\r\n        <div class=\"form-group\">\r\n            <label for=\"name\">Name</label>\r\n            <input type=\"text\" id=\"name\" name=\"name\" required class=\"form-control\">\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"description\">Description</label>\r\n            <textarea name=\"description\" id=\"description\" class=\"form-control\" rows=\"3\"></textarea>\r\n        </div>\r\n\r\n        <button type=\"submit\" class=\"btn btn-primary\">Create Project</button>\r\n</form>\r\n</div>`);\r\n\n\n//# sourceURL=webpack://todo-js-app/./src/views/create-project-view.js?");
+
+/***/ }),
+
 /***/ "./src/views/left-col.js":
 /*!*******************************!*\
   !*** ./src/views/left-col.js ***!
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => `<div class=\"col-sm-3\">\r\n    <ul id=\"projects-view\" class=\"list-group\"></ul>\r\n</div>`);\r\n\n\n//# sourceURL=webpack://todo-js-app/./src/views/left-col.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => `<div class=\"col-sm-3\">\r\n    <ul id=\"projects-view\" class=\"list-group mb-1\"></ul>\r\n    <button id=\"create-btn\" class=\"btn btn-primary w-100 text-center\">Create Project</button>\r\n</div>`);\r\n\n\n//# sourceURL=webpack://todo-js-app/./src/views/left-col.js?");
 
 /***/ }),
 
