@@ -5,23 +5,12 @@ import './style.css';
 
 
 export default () => {
-    
-
-    todoModel.addTodo({
-        title: 'Title A',
-        dueDate: '18-12-1992',
-        description: 'This is a description about this post!',
-        priority: 'normal',
-        project: 'Default'
-    })
-
     initialPage();
-    // const deleteButtons = document.querySelectorAll('.delete-task');
-    // for (let btn of deleteButtons) {
-    //     btn.addEventListener('click', (e) => {
+
+    const deleteButtons = document.querySelectorAll('.delete-task');
+    for (let btn of deleteButtons) {
+        btn.addEventListener('click', (e) => {
             
-    //     });
-    // }
-
-
+        });
+    }
 };

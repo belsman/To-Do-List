@@ -20,8 +20,16 @@ export default () => {
     
     // fetch models
     const projects = projectModel.fetchProjects();
-    const todos = todoModel.fetchTodos();
+    if (projects.length === 0) {
+        projectModel.createProject({
+            name: 'default',
+            description: 'initial default project',
+            date: Date.now()
+        })
+    }
 
+    const defaultTodos = todoModel.fetchTodos().filter( todo => todo.project == 'default' );
+    
     // display index views
     const projectListElement = document.getElementById('projects-view');
     const todoListElement = document.getElementById('todo-list-view');
@@ -30,7 +38,7 @@ export default () => {
         projectListElement.insertAdjacentHTML('beforeend', projectCard(project)) ;
     });
 
-    todos.forEach((todo) => {
+    defaultTodos.forEach((todo) => {
         todoListElement.insertAdjacentHTML('beforeend', todoCard(todo));
     });
 };
