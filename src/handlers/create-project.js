@@ -7,6 +7,7 @@ export default e => {
     rightCol.innerHTML = '';
     rightCol.innerHTML = createProjectFormView();
 
+    const { createProjectForm } = document;
     createProjectForm.addEventListener('submit', (e) => {
         e.preventDefault();
     
