@@ -3,6 +3,7 @@ import createProjectHandler from './handlers/create-project';
 import createTodoHandler from './handlers/create-todo';
 import projectTodoContentHandler from './handlers/project-todo-tabcontent';
 import editTodoHandler from './handlers/todo-detail';
+import deleteTodoHandler from './handlers/delete-todo';
 import './style.css';
 
 
@@ -32,6 +33,6 @@ export default () => {
 
     const deleteButtons = document.querySelectorAll('.delete-task');
     for (let btn of deleteButtons) {
-        btn.addEventListener('click', e => e);
+        btn.addEventListener('click', deleteTodoHandler);
     }
 };

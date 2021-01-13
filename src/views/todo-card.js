@@ -6,5 +6,5 @@ export default ({title, description, dueDate, priority, id}) => `<div class="tas
         <span class="due-date font-italic">${dueDate}</span><br>
         <span class="priority font-italic text-danger">${priority}</span>
     </div>
-    <span class="delete-task text-danger ml-auto align-self-end"><i class="fa fa-trash" aria-hidden="true"></i></span>
+    <span class="delete-task text-danger ml-auto align-self-end" data-id="${id}"><i class="fa fa-trash" aria-hidden="true"></i></span>
 </div>`;

@@ -28,7 +28,7 @@ export default () => {
         })
     }
 
-    const defaultTodos = todoModel.fetchTodos().filter( todo => todo.project == 'default' );
+    const defaultTodos = todoModel.fetchTodos().filter( todo => todo && (todo.project === 'default') );
     
     // display index views
     const projectListElement = document.getElementById('projects-view');
