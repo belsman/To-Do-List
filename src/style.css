@@ -16,3 +16,7 @@ ul#projects-view li:hover {
 .list-group-item {
   cursor: pointer;
 }
+
+.project-menu {
+  text-transform: uppercase;
+}

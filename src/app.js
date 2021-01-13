@@ -1,11 +1,18 @@
 import initialPage from './initial_page';
 import createProjectHandler from './handlers/create-project';
 import createTodoHandler from './handlers/create-todo';
+import projectTodoContentHandler from './handlers/project-todo-tabcontent';
 import './style.css';
 
 
 export default () => {
     initialPage();
+
+    // Project menu tab
+    const projectMenuButtons = document.querySelectorAll('li.list-group-item');
+    for (let menu of projectMenuButtons) {
+        menu.addEventListener('click', projectTodoContentHandler);
+    }
 
     // Create Project
     const createProjectBtn = document.querySelector('button#create-btn');
