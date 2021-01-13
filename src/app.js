@@ -2,6 +2,7 @@ import initialPage from './initial_page';
 import createProjectHandler from './handlers/create-project';
 import createTodoHandler from './handlers/create-todo';
 import projectTodoContentHandler from './handlers/project-todo-tabcontent';
+import editTodoHandler from './handlers/todo-detail';
 import './style.css';
 
 
@@ -22,6 +23,11 @@ export default () => {
     const addTodoBtns = document.querySelectorAll('.add-todo');
     for (let addTodo of addTodoBtns) {
         addTodo.addEventListener('click', createTodoHandler);
+    }
+
+    const editTodoButtons = document.querySelectorAll('span.edit-task');
+    for (let editBtn of editTodoButtons) {
+        editBtn.addEventListener('click', editTodoHandler);
     }
 
     const deleteButtons = document.querySelectorAll('.delete-task');

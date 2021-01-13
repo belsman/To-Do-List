@@ -1,5 +1,6 @@
 import todoModel from '../models/todo';
 import todoCard from '../views/todo-card';
+import editTodoHandler from '../handlers/todo-detail';
 
 export default e => {
     const selectedProject = e.target.dataset.menu;
@@ -10,4 +11,8 @@ export default e => {
     todosWrapper.id = 'todo-list-view';
     todosWrapper.innerHTML = todos.map(t => todoCard(t)).join('');
     rightCol.appendChild(todosWrapper);
+    const editTodoButtons = document.querySelectorAll('span.edit-task');
+    for (let editBtn of editTodoButtons) {
+        editBtn.addEventListener('click', editTodoHandler);
+    }
 };

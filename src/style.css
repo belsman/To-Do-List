@@ -19,4 +19,5 @@ ul#projects-view li:hover {
 
 .project-menu {
   text-transform: uppercase;
+  font-size: 0.9rem;
 }

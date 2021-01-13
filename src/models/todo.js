@@ -12,5 +12,8 @@ export default {
     getId() {
         const list = JSON.parse(localStorage.getItem('todoStorage')) || [];
         return list.length > 0 ? list[list.length - 1].id + 1 : 0;
+    },
+    update() {
+        localStorage.setItem('todoStorage', JSON.stringify(this.todoLists));
     }
 }
