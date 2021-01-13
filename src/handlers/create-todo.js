@@ -2,6 +2,7 @@ import todoModel from '../models/todo';
 import projectModel from '../models/project';
 import createTodoFormView from '../views/create-todo-view';
 import alerTemplate from '../views/todo-flash-message';
+import Todo from '../constructors/todo-constructor';
 
 
 export default e => {
@@ -21,12 +22,8 @@ export default e => {
         e.preventDefault();
     
         const { title, description, project, priority, dueDate } = e.target.elements;
-        const todo = {title: title.value, 
-            description: description.value,
-            project: project.value,
-            priority: priority.value,
-            dueDate: dueDate.value
-        };
+        const todo = new Todo(title.value, description.value, 
+            project.value, priority.value, dueDate.value);
         
         todoModel.addTodo(todo);
         const addFormWrapper = document.querySelector('div#add-task');
