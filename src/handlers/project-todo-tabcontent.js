@@ -5,8 +5,14 @@ import deleteTodoHandler from '../handlers/delete-todo';
 
 
 export default e => {
+    const listMenu = document.querySelectorAll('li.list-group-item');
+    for (let li of listMenu) {
+        li.classList.remove('active');
+    }
+
+    e.target.classList.add('active');
     const selectedProject = e.target.dataset.menu;
-    const todos = todoModel.fetchTodos().filter( t => t && (t.project === selectedProject));
+    const todos = todoModel.fetchTodos().filter(t => t && (t.project === selectedProject));
     const rightCol = document.querySelector('div.col-sm-9');
     rightCol.innerHTML = '';
     const todosWrapper = document.createElement('div');

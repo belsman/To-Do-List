@@ -2,7 +2,13 @@ import createProjectFormView from '../views/create-project-view';
 import projectCard from '../views/project-card';
 import projectModel from '../models/project';
 
+
 export default e => {
+    const listMenu = document.querySelectorAll('li.list-group-item');
+    for (let li of listMenu) {
+        li.classList.remove('active');
+    }
+    
     const rightCol = document.querySelector('div.col-sm-9');
     rightCol.innerHTML = '';
     rightCol.innerHTML = createProjectFormView();

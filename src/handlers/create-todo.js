@@ -5,6 +5,11 @@ import alerTemplate from '../views/todo-flash-message';
 
 
 export default e => {
+    const listMenu = document.querySelectorAll('li.list-group-item');
+    for (let li of listMenu) {
+        li.classList.remove('active');
+    }
+    
     const projects = projectModel.fetchProjects();
     const rightCol = document.querySelector('div.col-sm-9');
     
