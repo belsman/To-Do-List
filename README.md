@@ -46,7 +46,7 @@ git clone git@github.com:belsman/To-Do-List.git
 5) Run ```npm run build```
 6) Run ```cd dist/```
 8) Open the ```index.html``` in your browser
-9) Create Todo and Organize them by Projects
+9) Create Todos and organize them by Projects
 `
 
 ## Author
