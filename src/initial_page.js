@@ -21,7 +21,7 @@ export default () => {
     // fetch models
     const projects = projectModel.fetchProjects();
     if (projects.length === 0) {
-        projectModel.createProject({
+        projectModel.addProject({
             name: 'default',
             description: 'initial default project',
             date: Date.now()

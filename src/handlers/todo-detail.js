@@ -20,7 +20,7 @@ export default e => {
         const { title, description, project, priority, dueDate } = e.target.elements;
         todo.title = title.value;
         todo.description = description.value;
-        todo.priority = priority.value;
+        todo.priority = ['Normal', 'Urgent', 'Critical'][priority.value];
         todo.dueDate = dueDate.value;
         todo.project = project.value;
 

@@ -2,10 +2,12 @@ import todoModel from '../models/todo';
 import projectModel from '../models/project';
 import createTodoFormView from '../views/create-todo-view';
 import alerTemplate from '../views/todo-flash-message';
+import projectTodoContentHandler from '../handlers/project-todo-tabcontent';
 import Todo from '../constructors/todo-constructor';
 
 
 export default e => {
+    e.preventDefault();
     const listMenu = document.querySelectorAll('li.list-group-item');
     for (let li of listMenu) {
         li.classList.remove('active');
@@ -25,9 +27,16 @@ export default e => {
         const todo = new Todo(title.value, description.value, 
             project.value, priority.value, dueDate.value);
         
+        console.log(todo);
+        
         todoModel.addTodo(todo);
         const addFormWrapper = document.querySelector('div#add-task');
         addFormWrapper.insertAdjacentHTML('afterbegin', alerTemplate());
         createTodoForm.reset();
     });
+
+    const projectMenuButtons = document.querySelectorAll('li.list-group-item');
+    for (let menu of projectMenuButtons) {
+        menu.addEventListener('click', projectTodoContentHandler);
+    }
 };
