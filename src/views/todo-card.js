@@ -6,7 +6,7 @@ export default ({
         <h5>${title}</h5>
         <p>${description}</p>
         <span class="due-date font-italic">${dueDate}</span><br>
-        <span class="priority font-italic text-danger">${priority}</span>
+        <span class="priority font-italic text-danger">${['Normal', 'Urgent', 'Critical'][priority]}</span>
     </div>
     <span class="delete-task text-danger ml-auto align-self-end" data-id="${id}"><i class="fa fa-trash" aria-hidden="true"></i></span>
 </div>`;

@@ -3,12 +3,8 @@ class Todo {
     this.title = title;
     this.project = project;
     this.description = description;
-    this.priority = this.getPriorityLabel(priority);
+    this.priority = priority;
     this.dueDate = dueDate;
-  }
-
-  getPriorityLabel(idx) {
-    return ['Normal', 'Urgent', 'Critical'][idx];
   }
 }
 

@@ -8,9 +8,7 @@ import Todo from '../constructors/todo-constructor';
 export default e => {
   e.preventDefault();
   const listMenu = document.querySelectorAll('li.list-group-item');
-  for (const li of listMenu) {
-    li.classList.remove('active');
-  }
+  listMenu.forEach(li => li.classList.remove('active'));
 
   const projects = projectModel.fetchProjects();
   const rightCol = document.querySelector('div.col-sm-9');
@@ -35,7 +33,7 @@ export default e => {
   });
 
   const projectMenuButtons = document.querySelectorAll('li.list-group-item');
-  for (const menu of projectMenuButtons) {
+  projectMenuButtons.forEach(menu => {
     menu.addEventListener('click', projectTodoContentHandler);
-  }
+  });
 };

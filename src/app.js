@@ -11,9 +11,9 @@ export default () => {
 
   // Project menu tab
   const projectMenuButtons = document.querySelectorAll('li.list-group-item');
-  for (const menu of projectMenuButtons) {
+  projectMenuButtons.forEach(menu => {
     menu.addEventListener('click', projectTodoContentHandler);
-  }
+  });
 
   // Create Project
   const createProjectBtn = document.querySelector('button#create-btn');
@@ -21,17 +21,11 @@ export default () => {
 
   // Create Todo
   const addTodoBtns = document.querySelectorAll('.add-todo');
-  for (const addTodo of addTodoBtns) {
-    addTodo.addEventListener('click', createTodoHandler);
-  }
+  addTodoBtns.forEach(addTodo => addTodo.addEventListener('click', createTodoHandler));
 
   const editTodoButtons = document.querySelectorAll('span.edit-task');
-  for (const editBtn of editTodoButtons) {
-    editBtn.addEventListener('click', editTodoHandler);
-  }
+  editTodoButtons.forEach(editBtn => editBtn.addEventListener('click', editTodoHandler));
 
   const deleteButtons = document.querySelectorAll('.delete-task');
-  for (const btn of deleteButtons) {
-    btn.addEventListener('click', deleteTodoHandler);
-  }
+  deleteButtons.forEach(btn => btn.addEventListener('click', deleteTodoHandler));
 };

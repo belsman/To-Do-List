@@ -25,9 +25,9 @@ export default (projects, option) => `<div id="add-task" class="p-3 border">
         <div class="form-group">
             <label for="priority">Priority: </label>
             <select name="priority" id="priority" class="form-control">
-                <option value="0" ${option && option.priority === 'Normal' ? 'selected' : ''}>Normal</option>
-                <option value="1" ${option && option.priority === 'Urgent' ? 'selected' : ''}>Urgent</option>
-                <option value="2" ${option && option.priority === 'Critical' ? 'selected' : ''}>Critical</option>
+                <option value="0" ${option && option.priority === '0' ? 'selected' : ''}>Normal</option>
+                <option value="1" ${option && option.priority === '1' ? 'selected' : ''}>Urgent</option>
+                <option value="2" ${option && option.priority === '2' ? 'selected' : ''}>Critical</option>
             </select>
         </div>
 

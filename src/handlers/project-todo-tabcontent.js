@@ -5,9 +5,7 @@ import deleteTodoHandler from './delete-todo';
 
 export default e => {
   const listMenu = document.querySelectorAll('li.list-group-item');
-  for (const li of listMenu) {
-    li.classList.remove('active');
-  }
+  listMenu.forEach(li => li.classList.remove('active'));
 
   e.target.classList.add('active');
   const selectedProject = e.target.dataset.menu;
@@ -20,12 +18,8 @@ export default e => {
   rightCol.appendChild(todosWrapper);
   const editTodoButtons = document.querySelectorAll('span.edit-task');
 
-  for (const editBtn of editTodoButtons) {
-    editBtn.addEventListener('click', editTodoHandler);
-  }
+  editTodoButtons.forEach(editBtn => editBtn.addEventListener('click', editTodoHandler));
 
   const deleteButtons = document.querySelectorAll('.delete-task');
-  for (const btn of deleteButtons) {
-    btn.addEventListener('click', deleteTodoHandler);
-  }
+  deleteButtons.forEach(btn => btn.addEventListener('click', deleteTodoHandler));
 };
