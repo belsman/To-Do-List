@@ -6,7 +6,7 @@ body {
 textarea {
   resize: none;
 }
-  
+
 ul#projects-view li:hover {
   background-color: #333;
   color: #f9f9f9;
