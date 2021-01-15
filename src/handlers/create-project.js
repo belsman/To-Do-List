@@ -8,7 +8,6 @@ export default e => {
   listMenu.forEach(li => li.classList.remove('active'));
 
   const rightCol = document.querySelector('div.col-sm-9');
-  rightCol.innerHTML = '';
   rightCol.innerHTML = createProjectFormView();
 
   const { createProjectForm } = document;

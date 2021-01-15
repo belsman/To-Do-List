@@ -12,8 +12,6 @@ export default e => {
 
   const projects = projectModel.fetchProjects();
   const rightCol = document.querySelector('div.col-sm-9');
-
-  rightCol.innerHTML = '';
   rightCol.innerHTML = createTodoFormView(projects);
 
   const { createTodoForm } = document;

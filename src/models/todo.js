@@ -1,6 +1,7 @@
 export default {
   todoLists: JSON.parse(localStorage.getItem('todoStorage')) || [],
-  fetchTodos() {
+  fetchTodos(idx) {
+    if (idx) return this.todoLists[idx];
     return this.todoLists;
   },
   addTodo(obj) {
@@ -15,5 +16,8 @@ export default {
   },
   update() {
     localStorage.setItem('todoStorage', JSON.stringify(this.todoLists));
+  },
+  setTodoNull(idx) {
+    this.todoLists[idx] = null;
   },
 };
