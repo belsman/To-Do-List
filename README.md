@@ -49,6 +49,12 @@ git clone git@github.com:belsman/To-Do-List.git
 9) Create Todos and organize them by Projects
 `
 
+## Testing
+
+1) Open the Terminal
+2) Run ```cd To-Do-List``` to enter the main directory
+3) Run ```npm run test```
+
 ## Author
 
 👤 **Bello Babakolo**
